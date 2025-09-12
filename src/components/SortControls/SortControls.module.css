@@ -1,0 +1,29 @@
+.sortBar {
+  margin-bottom: 32px;
+}
+
+.label {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.29;
+  color: #8a8a89;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.select {
+  padding: 16px 18px;
+  width: 226px;
+  height: 48px;
+  border: none;
+  border-radius: 14px;
+  background: #54be96;
+  color: #fbfbfb;
+
+  font-size: 16px;
+  font-weight: 400;
+}

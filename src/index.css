@@ -1,0 +1,84 @@
+body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #191a15;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+ul,
+ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.button {
+  cursor: pointer;
+  border: none;
+  border-radius: 30px;
+  background: #54be96;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: #fbfbfb;
+  transition: all 0.4s ease;
+  height: 48px;
+}
+
+.button:is(:hover, :focus) {
+  background: #36a379;
+}
+
+.layout.home {
+  background: linear-gradient(to right bottom, #fbfbfb 30%, #54be9534 100%);
+  min-height: 100vh;
+}
+
+.layout.other {
+  background: #f3f3f3;
+  min-height: 100vh;
+}
+
+/* Універсальний контейнер */
+.container {
+  width: 100%;
+  max-width: 1440px; /* обмеження по макету */
+  margin: 0 auto; /* вирівнювання по центру */
+  padding: 0 16px; /* відступи по боках для мобільних */
+  box-sizing: border-box;
+}
+
+/* Гнучкі відступи під різні пристрої */
+@media (min-width: 768px) {
+  .container {
+    padding: 0 32px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    padding: 0 128px;
+  }
+}

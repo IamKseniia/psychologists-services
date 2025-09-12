@@ -1,0 +1,58 @@
+.titleContainer {
+  width: 595px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 80px;
+  line-height: 1.025;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+}
+
+.titleWord {
+  color: #54be96;
+  font-style: italic;
+}
+
+.text {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.33;
+  letter-spacing: -0.02em;
+  margin-bottom: 40px;
+}
+
+.getButton {
+  font-size: 20px;
+  line-height: 1.2;
+  width: 235px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconArrow {
+  stroke: currentcolor;
+  fill: currentcolor;
+  margin-left: 18px;
+}
+
+.mainImg {
+  width: 609px;
+}
+
+.homeContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 78px;
+  padding-bottom: 100px;
+}
+
+.containerModern {
+  padding-right: 84px;
+}

@@ -1,0 +1,153 @@
+.card {
+  position: relative;
+  display: flex;
+  gap: 24px;
+  max-width: 1184px;
+  padding: 24px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 24px;
+
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.topRight {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  display: flex;
+  align-items: center;
+}
+
+.rating {
+  padding-right: 16px;
+  border-right: 1px solid rgba(25, 26, 21, 0.2);
+  margin-right: 16px;
+}
+
+.price {
+  color: #38cd3e;
+}
+
+.favoriteIcon {
+  fill: transparent;
+  stroke: black;
+  transition: all 0.1s ease;
+}
+
+.heartBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 28px;
+}
+
+.favoriteIcon.active {
+  fill: #54be96;
+  stroke: #54be96;
+}
+
+.avatarContainer {
+  border: 2px solid rgba(84, 190, 150, 0.2);
+  border-radius: 30px;
+  width: 120px;
+  height: 120px;
+  position: relative;
+}
+
+.avatar {
+  width: 96px;
+  height: 96px;
+  object-fit: cover;
+  border-radius: 15px;
+  flex-shrink: 0;
+  margin: 12px;
+}
+
+/* Зелена крапка онлайн */
+.statusDot {
+  position: absolute;
+  top: 9px;
+  right: 14px;
+  width: 9.33px;
+  height: 9.33px;
+  background-color: #38cd3e;
+  border: 2.33px solid white;
+  border-radius: 50%;
+  display: block;
+}
+
+.info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.greyTitle {
+  color: #8a8a89;
+}
+
+.name {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1;
+  margin-top: 8px;
+  margin-bottom: 24px;
+}
+
+.infoDetails {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 4px;
+  margin-bottom: 24px;
+}
+
+.infoDetails li {
+  border-radius: 24px;
+  padding: 8px 16px;
+  background: #f3f3f3;
+}
+
+.about {
+  font-weight: 400;
+  line-height: 1.25;
+  color: rgba(25, 26, 21, 0.5);
+  margin-bottom: 14px;
+}
+
+.readMoreButton {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  text-decoration: underline;
+  border: none;
+  background-color: transparent;
+  display: flex;
+  justify-content: start;
+  width: fit-content;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: auto;
+  }
+
+  .avatar {
+    width: 150px;
+    height: 150px;
+  }
+
+  .info {
+    align-items: center;
+  }
+
+  .topRight {
+    position: static;
+    margin-bottom: 12px;
+  }
+}

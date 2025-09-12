@@ -1,0 +1,76 @@
+.headerContainer {
+  width: 100%;
+  border-bottom: 1px solid rgba(25, 26, 21, 0.1);
+  padding: 24px 0;
+  margin: 0;
+}
+
+.headerInner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  height: 48px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.list {
+  display: flex;
+  gap: 40px;
+}
+
+.isActive {
+  position: relative;
+}
+
+.isActive[href='/psychologists']::after,
+.isActive[href='/favorites']::after {
+  content: '';
+  position: absolute;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 8px;
+  background-color: #54be96;
+  border-radius: 50%;
+}
+
+.authButtons {
+  display: flex;
+  gap: 8px;
+}
+
+.logButton {
+  border: 1px solid rgba(25, 26, 21, 0.2);
+  background: transparent;
+  color: inherit;
+  padding: 14px 39px;
+}
+
+.logButton:is(:hover, :focus) {
+  background: transparent;
+  border-color: rgba(25, 26, 21, 0.384);
+}
+
+.regButton {
+  width: 171px;
+}
+
+.userBox {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.userName {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}

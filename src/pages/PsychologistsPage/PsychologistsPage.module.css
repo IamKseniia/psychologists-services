@@ -1,0 +1,24 @@
+.page {
+  padding-top: 64px;
+  padding-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+  max-width: 1184px;
+}
+
+.loadMoreBtnContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 64px;
+}
+
+.loadMoreButton {
+  width: 176px;
+}
