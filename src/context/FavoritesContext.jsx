@@ -2,7 +2,9 @@ import { createContext, useContext, useEffect, useState } from 'react';
 
 const FavoritesContext = createContext();
 
-export function FavoritesProvider({ children }) {
+export const useFavorites = () => useContext(FavoritesContext);
+
+export const FavoritesProvider = ({ children }) => {
   const [favorites, setFavorites] = useState(() => {
     const saved = localStorage.getItem('favorites');
     return saved ? JSON.parse(saved) : [];
@@ -14,15 +16,26 @@ export function FavoritesProvider({ children }) {
 
   const toggleFavorite = psychologist => {
     setFavorites(prev => {
-      const exists = prev.find(p => p.name === psychologist.name);
+      const exists = prev.some(
+        p => p.license === psychologist.license && p.name === psychologist.name
+      );
       if (exists) {
-        return prev.filter(p => p.name !== psychologist.name);
+        return prev.filter(
+          p =>
+            !(
+              p.license === psychologist.license && p.name === psychologist.name
+            )
+        );
+      } else {
+        return [...prev, psychologist];
       }
-      return [...prev, psychologist];
     });
   };
 
-  const isFavorite = name => favorites.some(p => p.name === name);
+  const isFavorite = psychologist =>
+    favorites.some(
+      p => p.license === psychologist.license && p.name === psychologist.name
+    );
 
   return (
     <FavoritesContext.Provider
@@ -31,8 +44,4 @@ export function FavoritesProvider({ children }) {
       {children}
     </FavoritesContext.Provider>
   );
-}
-
-export function useFavorites() {
-  return useContext(FavoritesContext);
-}
+};

@@ -57,7 +57,7 @@ export default function AuthModal({ type, onClose }) {
   return (
     <div className={s.backdrop} onClick={onClose}>
       <div className={s.modal} onClick={stopPropagation}>
-        <button className={s.closeBtn} onClick={onClose}>
+        <button type="button" className={s.closeBtn} onClick={onClose}>
           <svg width="32" height="32">
             <path d="M7 7 L25 25 M25 7 L7 25" stroke="black" strokeWidth="2" />
           </svg>

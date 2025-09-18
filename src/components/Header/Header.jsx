@@ -26,7 +26,7 @@ export default function Header() {
       <div className="container">
         <div className={s.headerInner}>
           <svg width="218" height="28">
-            <use xlinkHref="/icons.svg#icon-logo" />
+            <use href="/icons.svg#icon-logo" />
           </svg>
 
           <nav className={s.nav}>

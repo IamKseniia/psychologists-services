@@ -16,7 +16,8 @@ export default function PsychologistCard({ psychologist }) {
     about,
   } = psychologist;
 
-  const favorite = isFavorite(name);
+  // const favorite = isFavorite(psychologist.license);
+  const favorite = isFavorite(psychologist);
 
   return (
     <div className={s.card}>
@@ -49,7 +50,7 @@ export default function PsychologistCard({ psychologist }) {
 
       {/* Аватар */}
       <div className={s.avatarContainer}>
-        <img src={avatar_url} alt={name} className={s.avatar} />
+        <img src={avatar_url} alt={name} className={s.avatar} loading="lazy" />
         <span className={s.statusDot} aria-label="online" />
       </div>
 
