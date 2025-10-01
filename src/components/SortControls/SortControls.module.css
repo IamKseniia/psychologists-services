@@ -72,7 +72,6 @@
 }
 
 .option {
-  /* padding: 14px 8px; */
   cursor: pointer;
   transition: color 0.2s ease;
 }

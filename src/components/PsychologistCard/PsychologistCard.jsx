@@ -1,8 +1,13 @@
+import { useState } from 'react';
 import s from './PsychologistCard.module.css';
+import clsx from 'clsx';
 import { useFavorites } from '../../context/FavoritesContext';
+import AppointmentModal from '../AppointmentModal/AppointmentModal.jsx';
 
 export default function PsychologistCard({ psychologist }) {
   const { isFavorite, toggleFavorite } = useFavorites();
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [isAppointmentOpen, setIsAppointmentOpen] = useState(false);
 
   const {
     name,
@@ -14,9 +19,9 @@ export default function PsychologistCard({ psychologist }) {
     specialization,
     initial_consultation,
     about,
+    reviews = [],
   } = psychologist;
 
-  // const favorite = isFavorite(psychologist.license);
   const favorite = isFavorite(psychologist);
 
   return (
@@ -76,8 +81,56 @@ export default function PsychologistCard({ psychologist }) {
         </ul>
         <p className={s.about}>{about}</p>
 
-        <button className={s.readMoreButton}>Read more</button>
+        {/* Read more */}
+        <button
+          className={s.readMoreButton}
+          onClick={() => setIsExpanded(prev => !prev)}
+        >
+          {isExpanded ? 'Hide details' : 'Read more'}
+        </button>
+
+        {isExpanded && (
+          <div className={s.reviewsSection}>
+            {reviews.length === 0 ? (
+              <p>No reviews yet</p>
+            ) : (
+              reviews.map((rev, idx) => (
+                <div key={idx} className={s.reviewItem}>
+                  <div className={s.reviewHeader}>
+                    <div className={s.reviewAvatar}>
+                      {rev.reviewer[0].toUpperCase()}
+                    </div>
+                    <div className={s.contNameRating}>
+                      <p className={s.reviewName}>{rev.reviewer}</p>
+                      <div className={s.reviewRating}>
+                        <svg width="16" height="16" aria-hidden="true">
+                          <use href="/icons.svg#icon-star" />
+                        </svg>{' '}
+                        {rev.rating}
+                      </div>
+                    </div>
+                  </div>
+                  <p className={s.about}>{rev.comment}</p>
+                </div>
+              ))
+            )}
+            <button
+              className={clsx('button', s.appointmentButton)}
+              onClick={() => setIsAppointmentOpen(true)}
+            >
+              Make an appointment
+            </button>
+          </div>
+        )}
       </div>
+
+      {/* Модальне вікно запису */}
+      {isAppointmentOpen && (
+        <AppointmentModal
+          psychologist={psychologist}
+          onClose={() => setIsAppointmentOpen(false)}
+        />
+      )}
     </div>
   );
 }

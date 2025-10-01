@@ -65,7 +65,6 @@
   margin: 12px;
 }
 
-/* Зелена крапка онлайн */
 .statusDot {
   position: absolute;
   top: 9px;
@@ -127,6 +126,55 @@
   justify-content: start;
   width: fit-content;
   cursor: pointer;
+}
+
+.reviewsSection {
+  margin-top: 25px;
+}
+
+.reviewItem {
+  margin-bottom: 25px;
+}
+
+.reviewHeader {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.reviewAvatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 100%;
+  background-color: rgba(84, 190, 150, 0.2);
+
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1;
+  color: #54be96;
+}
+
+.contNameRating {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.reviewName {
+  line-height: 1.25;
+}
+
+.reviewRating {
+  font-size: 14px;
+  line-height: 1.29;
+}
+
+.appointmentButton {
+  padding: 14px 32px;
 }
 
 @media (max-width: 768px) {

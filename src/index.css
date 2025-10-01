@@ -61,16 +61,14 @@ img {
   min-height: 100vh;
 }
 
-/* Універсальний контейнер */
 .container {
   width: 100%;
-  max-width: 1440px; /* обмеження по макету */
-  margin: 0 auto; /* вирівнювання по центру */
-  padding: 0 16px; /* відступи по боках для мобільних */
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 16px;
   box-sizing: border-box;
 }
 
-/* Гнучкі відступи під різні пристрої */
 @media (min-width: 768px) {
   .container {
     padding: 0 32px;

@@ -1,14 +1,18 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import AuthModal from '../AuthModal/AuthModal.jsx';
 import s from './Header.module.css';
 import clsx from 'clsx';
 import { useAuth } from '../../context/AuthContext.jsx';
+import { useSorter } from '../../context/SorterContext.jsx';
 
 export default function Header() {
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const [authType, setAuthType] = useState('login');
   const { currentUser, logout } = useAuth();
+
+  const { resetSort } = useSorter();
+  const navigate = useNavigate();
 
   function isActiveClass({ isActive }) {
     return isActive ? s.isActive : '';
@@ -20,6 +24,16 @@ export default function Header() {
   };
 
   const closeModal = () => setIsAuthModalOpen(false);
+
+  const handleLogout = async () => {
+    try {
+      await logout();
+      resetSort();
+      navigate('/');
+    } catch (error) {
+      console.error('Logout error:', error.message);
+    }
+  };
 
   return (
     <header className={s.headerContainer}>
@@ -80,12 +94,17 @@ export default function Header() {
                   </svg>
                   <span>{currentUser.displayName || currentUser.email}</span>
                 </div>
-                <button
-                  className={clsx('button', s.logButton)}
-                  onClick={logout}
-                >
-                  Log out
-                </button>
+
+                {currentUser ? (
+                  <button
+                    className={clsx('button', s.logButton)}
+                    onClick={handleLogout}
+                  >
+                    Log out
+                  </button>
+                ) : (
+                  <button onClick={() => navigate('/login')}>Login</button>
+                )}
               </div>
             )}
           </div>

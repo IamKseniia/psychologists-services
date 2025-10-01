@@ -47,7 +47,7 @@ export default function AuthModal({ type, onClose }) {
       } else {
         await registerUser(data.email, data.password, data.name);
       }
-      onClose(); // закриваємо модалку після успіху
+      onClose();
     } catch (error) {
       console.error(error.message);
       alert(error.message);
