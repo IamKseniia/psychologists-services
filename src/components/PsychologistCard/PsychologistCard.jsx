@@ -3,9 +3,13 @@ import s from './PsychologistCard.module.css';
 import clsx from 'clsx';
 import { useFavorites } from '../../context/FavoritesContext';
 import AppointmentModal from '../AppointmentModal/AppointmentModal.jsx';
+import { useAuth } from '../../context/AuthContext';
+import toast from 'react-hot-toast';
 
 export default function PsychologistCard({ psychologist }) {
   const { isFavorite, toggleFavorite } = useFavorites();
+  const { isAuthenticated } = useAuth();
+
   const [isExpanded, setIsExpanded] = useState(false);
   const [isAppointmentOpen, setIsAppointmentOpen] = useState(false);
 
@@ -24,6 +28,16 @@ export default function PsychologistCard({ psychologist }) {
 
   const favorite = isFavorite(psychologist);
 
+  const handleHeartClick = () => {
+    if (!isAuthenticated) {
+      toast('This functionality is available only for authorized users', {
+        icon: '⚠️',
+      });
+      return;
+    }
+    toggleFavorite(psychologist);
+  };
+
   return (
     <div className={s.card}>
       {/* Верхній правий кут */}
@@ -40,7 +54,7 @@ export default function PsychologistCard({ psychologist }) {
         <button
           className={s.heartBtn}
           aria-label="Add to favorites"
-          onClick={() => toggleFavorite(psychologist)}
+          onClick={handleHeartClick}
         >
           <svg
             className={`${s.favoriteIcon} ${favorite ? s.active : ''}`}

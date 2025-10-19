@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
+import toast from 'react-hot-toast';
 
 import { login, register as registerUser } from '../../services/authService';
 import s from './AuthModal.module.css';
@@ -50,7 +51,7 @@ export default function AuthModal({ type, onClose }) {
       onClose();
     } catch (error) {
       console.error(error.message);
-      alert(error.message);
+      toast.error(error.message);
     }
   };
 

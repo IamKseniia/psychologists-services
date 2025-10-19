@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useContext, useEffect, useState, useMemo } from 'react';
 import { auth } from '../firebase';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
@@ -26,8 +26,10 @@ export const AuthProvider = ({ children }) => {
     navigate('/');
   };
 
+  const isAuthenticated = useMemo(() => !!currentUser, [currentUser]);
+
   return (
-    <AuthContext.Provider value={{ currentUser, logout }}>
+    <AuthContext.Provider value={{ currentUser, isAuthenticated, logout }}>
       {!loading && children}
     </AuthContext.Provider>
   );

@@ -1,16 +1,23 @@
 import { useState, useMemo, useRef, useEffect } from 'react';
+import { useFormContext } from 'react-hook-form';
 import s from './MeetingTimeDropdown.module.css';
 
-export default function MeetingTimeDropdown({ register, errors }) {
+export default function MeetingTimeDropdown() {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedTime, setSelectedTime] = useState('');
   const dropdownRef = useRef(null);
+
+  const {
+    register,
+    setValue,
+    formState: { errors },
+  } = useFormContext();
 
   // Генерація тайм-слотів
   const timeSlots = useMemo(() => {
     const slots = [];
     const startHour = 9;
-    const endHour = 18;
+    const endHour = 17.3;
     const step = 30; // хвилин
 
     for (let hour = startHour; hour <= endHour; hour++) {
@@ -26,6 +33,7 @@ export default function MeetingTimeDropdown({ register, errors }) {
 
   const handleSelect = time => {
     setSelectedTime(time);
+    setValue('meetingTime', time, { shouldValidate: true });
     setIsOpen(false);
   };
 
@@ -91,7 +99,6 @@ export default function MeetingTimeDropdown({ register, errors }) {
         </ul>
       )}
 
-      {/* прихований інпут для роботи з react-hook-form */}
       <input
         type="hidden"
         value={selectedTime}
