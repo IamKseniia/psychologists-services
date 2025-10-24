@@ -114,7 +114,6 @@ textarea::placeholder {
 .form textarea {
   height: 116px;
   resize: none;
-  margin-bottom: 24px;
 }
 
 .error {
@@ -124,5 +123,6 @@ textarea::placeholder {
 }
 
 .submitBtn {
+  margin-top: 24px;
   width: 100%;
 }

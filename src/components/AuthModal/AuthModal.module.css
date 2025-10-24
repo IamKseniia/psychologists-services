@@ -57,6 +57,12 @@
   padding: 0;
 }
 
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: -12px;
+}
+
 @media (max-width: 480px) {
   .modal {
     padding: 32px;
