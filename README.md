@@ -1,52 +1,38 @@
-Psychologists Services App
+Psychologists Services App Find your best psychologist.
 
-A modern web application for browsing psychologists, viewing their profiles, and
-booking appointments. Users can explore specialists, read reviews, add
-psychologists to favorites, and schedule consultations.
+📝 Project Description A modern web application for browsing psychologists,
+viewing their profiles, and booking appointments. Users can explore specialists,
+read reviews, add psychologists to favorites, and schedule consultations.
 
-The application is built with React and interacts with a backend API to retrieve
-psychologists data.
+🚀 Technologies Used Vite bundler React framework Redux for state management
+React Router for routing Axios for HTTP requests CSS Modules
 
-Features
+📄 Pages Overview Homepage – includes a promotional banner and a call to action.
 
-Browse a catalog of psychologists
+PsychologistsPage – displays available vehicles with filter options:
 
-Sort psychologists by rating or price
+A-Z Price Popular.
 
-View detailed information and reviews
+FavoritesPage – displays a list of vehicles the user has marked as favorites.
+Users can remove psychologists from the list or navigate to their detailed view.
 
-Add psychologists to Favorites
+🧭 Routing / – Homepage /psychologists – Psychologists catalog /favorites –
+Favorite psychologists.
 
-Book an appointment through a form
+🧠 State Management Global state with Redux:
 
-User authentication (login / registration)
+List of vehicles Active filters Previous search results should be cleared before
+sending new filter queries to ensure data accuracy.
 
-Protected routes for authorized users
+⚙️ Features Browse a catalog of psychologists Sort psychologists by rating or
+price View detailed information and reviews Add psychologists to Favorites Book
+an appointment through a form User authentication (login / registration)
+Protected routes for authorized users Responsive design for desktop, tablet, and
+mobile devices Toast notifications for user feedback.
 
-Responsive design for desktop, tablet, and mobile devices
+🌐 Deployment The project is deployed using Vercel.
 
-Toast notifications for user feedback
+👤 Author Developed by Kseniia Safronova.
 
-Tech Stack
-
-React
-
-React Router
-
-Redux Toolkit
-
-Axios
-
-React Hook Form
-
-Firebase Authentication
-
-CSS Modules
-
-React Hot Toast
-
-Vite
-
-Author
-
-Developed by Kseniia Safronova Frontend Developer
+GitHub: https://github.com/IamKseniia LinkedIn:
+https://www.linkedin.com/in/kseniia-safronova-fullstack/

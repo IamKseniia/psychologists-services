@@ -16,9 +16,117 @@
   width: 599px;
   max-width: 599px;
   position: relative;
-
   overflow-y: auto;
   max-height: 95vh;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+  width: 450px;
+}
+
+.text {
+  font-weight: 400;
+  line-height: 1.25;
+  color: rgba(25, 26, 21, 0.5);
+  margin-bottom: 40px;
+}
+
+.contPsychologist {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.avatar {
+  width: 44px;
+  height: 44px;
+  object-fit: cover;
+  border-radius: 15px;
+  flex-shrink: 0;
+}
+
+.contName {
+  gap: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.psychologistTitle {
+  font-size: 12px;
+  line-height: 1.33;
+  color: #8a8a89;
+}
+
+.psychologistName {
+  line-height: 1.5;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 16px;
+}
+
+.form input,
+.form textarea {
+  box-sizing: border-box;
+  padding: 16px 18px;
+  width: 100%;
+  height: 52px;
+  border: 1px solid rgba(25, 26, 21, 0.1);
+  border-radius: 12px;
+
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #191a15;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #191a15;
+}
+
+.contPhoneTime {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.form textarea {
+  height: 116px;
+  resize: none;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.submitBtn {
+  margin-top: 24px;
+  width: 100%;
 }
 
 @media (max-width: 768px) {
