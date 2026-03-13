@@ -52,6 +52,7 @@
   background: transparent;
   color: inherit;
   padding: 14px 39px;
+  white-space: nowrap;
 }
 
 .logButton:is(:hover, :focus) {
@@ -86,22 +87,9 @@
     gap: 24px;
   }
 
-  /* .authButtons {
-    flex-direction: column;
-    gap: 12px;
-  } */
-
   .logButton,
   .regButton {
     width: 100%;
     padding: 12px;
-  }
-}
-
-@media (max-width: 480px) {
-  .list {
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
   }
 }

@@ -1,5 +1,6 @@
 .titleContainer {
-  width: 595px;
+  width: 100%;
+  max-width: 595px;
 }
 
 .title {
@@ -40,7 +41,9 @@
 }
 
 .mainImg {
-  width: 609px;
+  width: 100%;
+  max-width: 609px;
+  height: auto;
 }
 
 .homeContainer {
@@ -65,18 +68,20 @@
     padding-bottom: 64px;
   }
 
+  .containerModern {
+    padding-right: 16px;
+  }
+
   .titleContainer {
     width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .title {
     font-size: 48px;
-  }
-
-  .mainImg {
-    width: 80%;
-    max-width: 400px;
-    margin-top: 32px;
   }
 }
 
@@ -90,7 +95,7 @@
   }
 
   .getButton {
-    width: 100%;
+    width: 70%;
     height: 52px;
     font-size: 18px;
   }

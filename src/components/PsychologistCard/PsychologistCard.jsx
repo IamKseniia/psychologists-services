@@ -78,17 +78,17 @@ export default function PsychologistCard({ psychologist }) {
         <p className={s.greyTitle}>Psychologist</p>
         <h3 className={s.name}>{name}</h3>
         <ul className={s.infoDetails}>
-          <li className={s.experience}>
+          <li>
             <span className={s.greyTitle}>Experience:</span> {experience}
           </li>
-          <li className={s.license}>
+          <li>
             <span className={s.greyTitle}>License:</span> {license}
           </li>
-          <li className={s.specialization}>
+          <li>
             <span className={s.greyTitle}>Specialization:</span>{' '}
             {specialization}
           </li>
-          <li className={s.consultation}>
+          <li>
             <span className={s.greyTitle}>Initial_consultation:</span>{' '}
             {initial_consultation}
           </li>
@@ -100,7 +100,7 @@ export default function PsychologistCard({ psychologist }) {
           className={s.readMoreButton}
           onClick={() => setIsExpanded(prev => !prev)}
         >
-          {isExpanded ? 'Hide details' : 'Read more'}
+          {isExpanded ? 'Read less' : 'Read more'}
         </button>
 
         {isExpanded && (
